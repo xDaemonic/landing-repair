@@ -1,0 +1,59 @@
+.hero
+  padding: 5.2rem 0
+  color: $text-color-main
+  background-color: #f5f5f5
+  &-wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-title
+    font-size: 4.1rem
+    line-height: 5.5rem
+    font-weight: 700
+    margin-bottom: 4rem
+  &-subtitle
+    font-size: 2rem
+    font-weight: 700
+    margin-bottom: 7.1rem
+    @media (min-width: 1200px)
+      margin-left: 3px
+  &-cont
+    flex-basis: 50%
+    @media (min-width: 1200px)
+      margin-top: -9px
+  &-logo
+    text-align: right
+    flex-basis: 48.7%
+    box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.05), 16px 22px 35px rgba(0, 0, 0, 0.05)
+    background: none
+    img
+      max-width: 100%
+  &-text
+    max-width: 30.6rem
+    @media (min-width: 1200px)
+      margin-left: 4px
+    & :last-child
+      margin-bottom: 0
+    .box1
+      margin-bottom: 2.8rem
+    .box2
+      margin-bottom: 2.2rem
+    &_box
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      &__logo
+        padding: 7px
+        margin-right: 3rem
+        border: 2px solid $active-color
+        border-radius: 50%
+        &__wrap
+          width: 20px
+          height: 20px
+          display: flex
+          justify-content: center
+          align-items: center
+      &__descr
+        font-size: 1.4rem
+        font-weight: 300
+        line-height: 2.4rem

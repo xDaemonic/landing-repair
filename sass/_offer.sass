@@ -1,0 +1,113 @@
+.offer
+  padding: 7.5rem 0 9rem
+  position: relative
+  color: $text-color-main
+  &::after
+    content: ''
+    position: absolute
+    width: 49.5%
+    height: 100%
+    top: 0
+    right: 0
+    background-image: url(../img/offer-bg.jpg)
+    background-position: top center
+    background-size: 100% 100%
+    z-index: -1
+  &-wrap
+    display: flex
+    justify-content: flex-start
+    align-items: center
+  &-box
+    flex-basis: 42.3%
+    @media (min-width: 1200px)
+      margin-left: 3px
+  &-title
+    font-size: 2.4rem
+    line-height: 3.5rem
+    font-weight: 700
+    margin-bottom: 1.9rem
+    max-width: 35rem
+  &-subtitle
+    font-size: 1.6rem
+    font-weight: 300
+    margin-bottom: 3rem
+    max-width: 25rem
+    line-height: 1.9rem
+    @media (min-width: 1200px)
+      margin-left: -1px
+  &-form
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 2.6rem
+    & :nth-child(1)
+      @media (min-width: 1200px)
+        margin-left: 1px
+        padding-left: 22px
+    & :nth-child(2)
+      @media (min-width: 1200px)
+        margin-right: 3px
+        padding-left: 29px
+        letter-spacing: -0.2px
+  &-input
+    flex-basis: 48%
+    border: 1px solid #dddddd
+    border-radius: 10px
+    font-size: 1.6rem
+    max-width: 24rem
+    padding: 2.25rem 0 2.25rem 2.6rem
+    margin-bottom: 3rem
+    &::placeholder
+      color: #999999
+      font-size: 1.5rem
+      line-height: 2.4rem
+      font-weight: 300
+  &-button
+    width: 100%
+    font-size: 1.6rem
+    line-height: 1.4rem
+    font-weight: 700
+    padding: 2.7rem 0 2.8rem
+    letter-spacing: -0.4px
+    & :first-child
+      @media (min-width: 1200px)
+        padding-left: 0
+        letter-spacing: -0.36px !important
+        margin-left: -4px
+    & :last-child
+      @media (min-width: 1200px)
+            padding-left: 0
+            letter-spacing: 0.2px !important
+            margin-right: 0
+            margin-left: 2px
+    @media (min-width: 1200px)
+      padding-left: 2px
+    
+  &-descr
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @media (min-width: 120px)
+      margin-left: -2px
+    &_left
+      flex-basis: 46%
+      font-size: 1.5rem
+      line-height: 2.4rem
+      font-weight: 300
+    &_right
+      flex-basis: 40%
+      font-size: 15px
+      @media (min-width: 1200px)
+        margin-right: 2px
+      & :last-child
+        margin-bottom: 0
+      div
+        font-weight: 300
+        margin-bottom: 10px
+        a
+          font-weight: 700
+          @include links($text-color-main, none, 0, $link-hover-color)
+          @media (min-width: 1200px)
+            display: inline-block
+            margin-left: -1px
+

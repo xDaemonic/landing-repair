@@ -1,0 +1,88 @@
+html:root
+  font-size: 10px
+  
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  font-family: 'Museo Sans'
+
+.container 
+  width: 100%
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+
+@media (min-width: 576px) 
+  .container 
+    max-width: 540px
+
+@media (min-width: 768px) 
+  .container 
+    max-width: 720px
+
+@media (min-width: 992px) 
+  .container 
+    max-width: 960px
+
+@media (min-width: 1200px) 
+  .container 
+    max-width: 1187px
+    padding-right: 0
+
+// Variables
+
+$text-color-main: #333333
+
+$active-color: #ffd200
+$bg-active-color: #ffc000
+
+$link-hover-color: #00bcd4
+
+
+// Mixins
+
+@mixin links($color, $td, $out, $hcolor)
+  color: $color
+  text-decoration: $td
+  transition: 0.4s
+  &:visited
+    color: $color
+  &:link
+    color: $color
+  &:active
+    color: $color
+    outline: $out
+  &:focus
+    outline: $out
+  &:hover
+    color: $hcolor
+    transition: 0.4s
+
+
+// Templates
+
+.button
+  color: $text-color-main
+  font-size: 13px
+  font-weight: 700
+  line-height: 1.3rem
+  background-color: $active-color
+  padding: 1.75rem 2.9rem
+  border: none
+  border-radius: 10px
+  outline: 0
+  transition: 0.4s
+  &:focus
+    outline: 0
+  &:active
+    outline: 0
+  &:hover
+    background-color: $link-hover-color
+    color: #ffffff
+    transition: 0.4s
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5)
+

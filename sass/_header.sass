@@ -1,0 +1,31 @@
+.header
+  padding: 7px 0 8px
+  color: $text-color-main
+  &-wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-logo
+    max-width: 15.5rem
+    @media (min-width: 1200px)
+      margin-left: 3px
+    img
+      width: 100%
+  &-cont
+    display: flex
+    justify-content: space-between
+    align-items: center
+    text-align: right
+    &_phone
+      &__text
+        font-size: 1.3rem
+        font-weight: 300
+        margin-bottom: 0.8rem
+      &__num 
+        font-size: 2rem
+        font-weight: 700
+        color: $text-color-main
+        a
+          @include links($text-color-main, none, 0, $link-hover-color)
+    &_button
+      margin-left: 2.9rem
