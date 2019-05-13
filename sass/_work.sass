@@ -8,8 +8,8 @@
   background-repeat: repeat-y
   &-title
     text-align: center
-    font-size: 30px
-    line-height: 45px
+    font-size: 3rem
+    line-height: 4.5rem
     font-weight: 700
     margin-bottom: 9.3rem
     @media (min-width: 1200px)
@@ -20,25 +20,34 @@
       width: 4.5rem
       height: 1.9rem
       background-image: url(../img/work/left-arrow.png)
+      background-repeat: no-repeat
+      background-size: 100% 100%
       bottom: -8.6rem
       left: 50%
       transform: translate(-59px, -1px)
       z-index: 100
+      &:hover
+        cursor: pointer
     .right-arrow
       position: absolute
       width: 4.5rem
       height: 1.9rem
       background-image: url(../img/work/right-arrow.png)
+      background-repeat: no-repeat
+      background-size: 100% 100%
       bottom: -8.6rem
       right: 50%
       transform: translate(61px, -1px)
       z-index: 100
+      &:hover
+        cursor: pointer
     .slick-slide img
       margin: 0 auto
     .slick-slide
       margin: 0 15px
       min-width: 370px
-      transform: translate(-40px, 0)
+      @media (min-width: 1200px)
+        transform: translate(-40px, 0)
     .slick-track
       min-width: 6400px
 

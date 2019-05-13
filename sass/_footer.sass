@@ -1,0 +1,99 @@
+.footer
+  color: $text-color-second
+  &-wrap
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+  .map-container
+    flex-basis: 51%
+    position: relative
+    background-image: url(../img/map-bg.jpg)
+    background-size: cover
+    background-position: right center
+    min-height: 63.92999999999999rem
+    overflow: hidden
+  #map
+    min-height: 63.92999999999999rem
+  &-content
+    padding-top: 9.2rem
+    padding-bottom: 11.9rem
+    padding-left: 22.3rem
+    flex-basis: 50%
+  &-title
+    max-width: 30.3rem
+    font-size: 2.2rem
+    line-height: 3.3rem
+    font-weight: 700
+    margin-bottom: 8.93rem
+  &-list
+    max-width: 20rem
+    & :last-child
+      margin-bottom: 0
+    &_item
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      margin-bottom: 2.9rem
+      &__icon
+        align-self: flex-start
+        line-height: 3.2rem
+        margin-right: 2rem
+        min-width: 20px
+      &__text
+        font-size: 1.6rem
+        line-height: 2.6rem
+        font-weight: 300
+        a
+          @include links($text-color-main, none, 0, $link-hover-color)
+          font-weight: 700
+
+.loader 
+  position: absolute
+  z-index: 15
+  top: -100%
+  left: 0
+  box-sizing: border-box
+  width: 100%
+  height: 100%
+  overflow: hidden
+  color: #000000
+  transition: opacity .7s ease
+  opacity: 0
+  background-color: rgba(0,0,0,.55)
+ 
+.loader:after,
+.loader:before 
+  box-sizing: border-box
+
+.loader.is-active 
+  top: 0
+  opacity: 1
+
+.loader-default:after 
+  position: absolute
+  top: calc(50% - 24px)
+  left: calc(50% - 24px)
+  width: 48px
+  height: 48px
+  content: ''
+  animation: rotation 1s linear infinite
+  border: solid 8px #ffffff
+  border-left-color: transparent
+  border-radius: 50%
+
+ 
+@keyframes rotation 
+  from 
+    transform: rotate(0)
+  to 
+    transform: rotate(359deg)
+  
+@keyframes blink 
+  from 
+    opacity: .5
+  to 
+    opacity: 1
+
+@media (max-width: 1300px)
+  .footer-content
+    padding-left: 15.7rem

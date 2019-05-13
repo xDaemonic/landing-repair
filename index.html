@@ -1,6 +1,3 @@
-<? require_once('data.php'); ?>
-
-
 <!doctype html>
 <html lang="ru">
 
@@ -14,6 +11,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/main.css">
+  <script src="https://api-maps.yandex.ru/2.1?apikey=b94eb56c-18c8-4df2-b6a4-2bf15f878911&lang=ru_RU"></script>
   <title>Ремонт квартир</title>
 </head>
 
@@ -262,10 +260,289 @@
     </section>
     <!-- /.price -->
 
+    <section class="steps">
+      <div class="container">
+        <div class="steps-title">Наши специалисты готовы выехать на замер
+          в любое удобное для Вас время</div>
+        <!-- /.stesp-title -->
+        <div class="steps-subtitle">5 шагов до ремонта</div>
+        <!-- /.steps-subtitle -->
+        <div class="steps-wrap">
+          <div class="steps-box">
+            <div class="steps-box_logo">
+              <img src="img/steps/step1.png" alt="step1">
+            </div>
+            <!-- /.steps-box_logo -->
+            <div class="steps-box_text">Вы звоните нам
+              или оставляете заявку</div>
+            <!-- /.steps-box_text -->
+          </div>
+          <!-- /.steps-box -->
+          <div class="steps-box">
+            <div class="steps-box_logo">
+              <img src="img/steps/step2.png" alt="step2">
+            </div>
+            <!-- /.steps-box_logo -->
+            <div class="steps-box_text">Согласуем удобное
+              для Вас время выезда
+              специалиста на замер
+            </div>
+            <!-- /.steps-box_text -->
+          </div>
+          <!-- /.steps-box -->
+          <div class="steps-box">
+            <div class="steps-box_logo">
+              <img src="img/steps/step3.png" alt="step3">
+            </div>
+            <!-- /.steps-box_logo -->
+            <div class="steps-box_text">Рассчитываем смету
+              согласовываем
+              с Вами</div>
+            <!-- /.steps-box_text -->
+          </div>
+          <!-- /.steps-box -->
+          <div class="steps-box">
+            <div class="steps-box_logo">
+              <img src="img/steps/step4.png" alt="step4">
+            </div>
+            <!-- /.steps-box_logo -->
+            <div class="steps-box_text">Подписываем договор
+              закупаем материал
+              по оптовым ценам</div>
+            <!-- /.steps-box_text -->
+          </div>
+          <!-- /.steps-box -->
+          <div class="steps-box">
+            <div class="steps-box_logo">
+              <img src="img/steps/step5.png" alt="step5">
+            </div>
+            <!-- /.steps-box_logo -->
+            <div class="steps-box_text">Выполняем ремонт
+              в указанные сроки</div>
+            <!-- /.steps-box_text -->
+          </div>
+          <!-- /.steps-box -->
+        </div>
+        <!-- /.steps-wrap -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.steps -->
+
+    <section class="advantages">
+      <h2 class="advantages-title">Ремонт обойдется Вам дешевле, так как
+        <span class="ppfix">мы используем качественные материалы по оптовым ценам</span></h2>
+      <div class="container">
+        <!-- /.advantages-title -->
+        <div class="advantages-wrap">
+          <div class="advantages-box">
+            <div class="advantages-box_text">Поможем закупить все материалы
+              по&nbspоптовым&nbspценам у проверенных поставщиков</div>
+            <!-- /.advantages-box_text -->
+            <div class="advantages-box_img">
+              <img src="img/advantages/img1.png" alt="img1">
+            </div>
+            <!-- /.advantages-box_img -->
+          </div>
+          <!-- /.advantages-box -->
+          <div class="advantages-box">
+            <div class="advantages-box_text">Мы дадим Вам <b>максимальные скидки</b>
+              у&nbspнаших партнеров для закупки материалов&nbspоптом</div>
+            <!-- /.advantages-box_text -->
+            <div class="advantages-box_img">
+              <img src="img/advantages/img2.png" alt="img2">
+            </div>
+            <!-- /.advantages-box_img -->
+          </div>
+          <!-- /.advantages-box -->
+          <div class="advantages-box">
+            <div class="advantages-box_text">Все, что не сможете найти в городе -
+              поможем заказать <b>у проверенных
+                поставщиков</b></div>
+            <!-- /.advantages-box_text -->
+            <div class="advantages-box_img">
+              <img src="img/advantages/img3.png" alt="img3">
+            </div>
+            <!-- /.advantages-box_img -->
+          </div>
+          <!-- /.advantages-box -->
+        </div>
+        <!-- /.advantages-wrap -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.advantages -->
+
+    <section class="certs">
+      <div class="container">
+        <h2 class="certs-title">Все наши гарантийные обязательства
+          подробно и прозрачно описаны в договоре</h2>
+        <!-- /.certs-title -->
+        <div class="certs-wrap">
+          <div class="certs-box">
+            <div class="certs-box_img">
+              <img src="img/certs/cert1.jpg" alt="certficate">
+            </div>
+            <!-- /.certs-box_img -->
+            <div class="certs-box_text">Гарантия на качество
+              выполняемых работ</div>
+            <!-- /.certs-box_text -->
+          </div>
+          <!-- /.certs-box -->
+          <div class="certs-box">
+            <div class="certs-box_img">
+              <img src="img/certs/cert2.jpg" alt="certficate">
+            </div>
+            <!-- /.certs-box_img -->
+            <div class="certs-box_text">Гарантия на фиксированные цены
+              Виды работ и цены на них
+              прописаны в договоре
+
+            </div>
+            <!-- /.certs-box_text -->
+          </div>
+          <!-- /.certs-box -->
+          <div class="certs-box">
+            <div class="certs-box_img">
+              <img src="img/certs/cert3.jpg" alt="certficate">
+            </div>
+            <!-- /.certs-box_img -->
+            <div class="certs-box_text">Гарантия на точное соблюдение
+              сроков и ответственность за
+              их&nbspневыполнение
+            </div>
+            <!-- /.certs-box_text -->
+          </div>
+          <!-- /.certs-box -->
+        </div>
+        <!-- /.certs-wrap -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.certs -->
+
+
+    <section class="request">
+      <div class="container">
+        <div class="request-descr">
+          <h3 class="request-descr_title">Мы можем озвучить Вам примерную стоимость
+            работы и материалов по телефону</h3>
+          <!-- /.request-descr_title -->
+          <div class="request-descr_subtitle">Для этого нужно ответить на 4 вопроса:</div>
+          <!-- /.request-descr_subtitle -->
+          <div class="request-descr_list">
+            <div class="request-descr_list__item">
+              <div class="number">1.</div>
+              <!-- /.number -->
+              <div class="text">Какова площадь помещения?</div>
+              <!-- /.text -->
+            </div>
+            <!-- /.request-descr_list__item -->
+            <div class="request-descr_list__item">
+              <div class="number">2.</div>
+              <!-- /.number -->
+              <div class="text">У Вас новостройка или вторичное жилье?</div>
+              <!-- /.text -->
+            </div>
+            <!-- /.request-descr_list__item -->
+            <div class="request-descr_list__item">
+              <div class="number">3.</div>
+              <!-- /.number -->
+              <div class="text">Где находится помещение, в котором будет
+                производиться ремонт?</div>
+              <!-- /.text -->
+            </div>
+            <!-- /.request-descr_list__item -->
+            <div class="request-descr_list__item">
+              <div class="number">4.</div>
+              <!-- /.number -->
+              <div class="text">Назначение помещения?</div>
+              <!-- /.text -->
+            </div>
+            <!-- /.request-descr_list__item -->
+          </div>
+          <!-- /.request-descr_list -->
+        </div>
+        <!-- /.request-desct -->
+        <div class="request-form">
+          <div class="request-form-content">
+            <h3 class="request-form_title">Оставьте заявку на бесплатный
+              <span>расчет ремонта по телефону</span></h3>
+            <!-- /.request-form_title -->
+            <div class="request-form_subtitle">Для этого заполните форму ниже</div>
+            <!-- /.request-form_subtitle -->
+            <form action="">
+              <input type="text" required placeholder="Ваше имя">
+              <input type="tel" required placeholder="Ваш телефон">
+              <button class="button" type="submit">Рассчитать стоимость</button>
+              <!-- /.button -->
+              <div class="form-descr">Мы перезвоним Вам в течение 60 секунд</div>
+              <!-- /.form-descr -->
+            </form>
+          </div>
+        </div>
+        <!-- /.request-form -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.request -->
 
   </main>
 
   <footer class="footer">
+    <div class="footer-wrap">
+      <div class="map-container">
+        <div class="loader loader-default"></div>
+        <div id="map"></div>
+      </div>
+      <!-- /.map -->
+      <div class="footer-content">
+        <div class="footer-title">Приезжайте к нам в гости!
+          Проконсультируем Вас
+          по&nbspвсем вопросам ремонта
+        </div>
+        <!-- /.footer-title -->
+        <div class="footer-list">
+          <div class="footer-list_item">
+            <div class="footer-list_item__icon">
+              <img src="img/footer/icon1.png" alt="icon">
+            </div>
+            <!-- /.footer-list_item__icon -->
+            <div class="footer-list_item__text">г. Москва<br>
+              <b>
+                ул. Ленинга, д. 10,
+                корпус 2, оф. 308
+              </b></div>
+            <!-- /.footer-list_item__text -->
+          </div>
+          <!-- /.footer-list_item -->
+          <div class="footer-list_item">
+            <div class="footer-list_item__icon">
+              <img src="img/footer/icon2.png" alt="icon">
+            </div>
+            <!-- /.footer-list_item__icon -->
+            <div class="footer-list_item__text">Режим работы:<br>
+              <b>с 9:00 до 18:00</b>
+            </div>
+            <!-- /.footer-list_item__text -->
+          </div>
+          <!-- /.footer-list_item -->
+          <div class="footer-list_item">
+            <div class="footer-list_item__icon">
+              <img src="img/footer/icon3.png" alt="icon">
+            </div>
+            <!-- /.footer-list_item__icon -->
+            <div class="footer-list_item__text">Телефон:<br>
+              <a href="tel:+74954225131">+ 7 (495) 42-251-31</a></div>
+            <!-- /.footer-list_item__text -->
+          </div>
+          <!-- /.footer-list_item -->
+        </div>
+        <!-- /.footer-list -->
+      </div>
+      <!-- /.footer-content -->
+    </div>
+    <!-- /.footer-wrap -->
   </footer>
 
 
@@ -275,8 +552,10 @@
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
   <script src="plugins/slick/slick.min.js"></script>
+
   <!-- Outer script's file -->
   <script src="js/scripts.js"></script>
+
 </body>
 
 </html>

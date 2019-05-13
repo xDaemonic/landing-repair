@@ -34,18 +34,19 @@
     margin-bottom: 3rem
     transition: 0.4s
     max-width: 37rem
-    &:hover
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1)
-      border: 1px solid transparent
-      .price-box
-        &_logo
-          &::after
-            opacity: 0.8
-            transition: 0.4s
-        &_button
-          &::before
-            height: 13px
-            transition: 0.4s
+    @media (min-width: 992px)
+      &:hover
+        box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1)
+        border: 1px solid transparent
+        .price-box
+          &_logo
+            &::after
+              opacity: 0.8
+              transition: 0.4s
+          &_button
+            &::before
+              height: 13px
+              transition: 0.4s
     &_logo
       margin-bottom: 3.9rem
       position: relative

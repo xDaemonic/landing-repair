@@ -16,6 +16,9 @@ body
   margin-right: auto
   margin-left: auto
 
+b
+  font-weight: 700
+
 @media (min-width: 576px) 
   .container 
     max-width: 540px
@@ -60,16 +63,17 @@ $link-hover-color: #00bcd4
     outline: $out
   &:focus
     outline: $out
-  &:hover
-    color: $hcolor
-    transition: 0.4s
+  @media (min-width: 992px)
+    &:hover
+      color: $hcolor
+      transition: 0.4s
 
 
 // Templates
 
 .button
   color: $text-color-main
-  font-size: 13px
+  font-size: 1.4rem
   font-weight: 700
   line-height: 1.3rem
   background-color: $active-color
@@ -78,13 +82,16 @@ $link-hover-color: #00bcd4
   border-radius: 10px
   outline: 0
   transition: 0.4s
+  @media (min-width: 1200px)
+    font-size: 1.3rem
   &:focus
     outline: 0
   &:active
     outline: 0
-  &:hover
-    background-color: $link-hover-color
-    color: #ffffff
-    transition: 0.4s
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5)
+  @media (min-width: 992px)
+    &:hover
+      background-color: $link-hover-color
+      color: #ffffff
+      transition: 0.4s
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5)
 
