@@ -21,12 +21,13 @@
     justify-content: center
     align-items: center
     flex-wrap: wrap
-    & :nth-child(3)
-      margin-right: 0
-      margin-left: -1px
-    & :nth-child(6)
-      margin-right: 0
-      margin-left: -1px
+    @media (min-width: 992px)
+      & :nth-child(3)
+        margin-right: 0
+        margin-left: -1px
+      & :nth-child(6)
+        margin-right: 0
+        margin-left: -1px
   &-box
     border: 1px solid #e8e8e8
     margin-right: 3.1rem
