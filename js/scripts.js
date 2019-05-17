@@ -210,6 +210,7 @@ $(document).ready(function () {
   /* 8.Валидатор для всех форм */
   forms.each(function () {
     $(this).validate({
+      ignore: '.ignore',
       rules: {
         name: {
           required: true,
@@ -232,7 +233,7 @@ $(document).ready(function () {
         event.preventDefault();
         $.ajax({
           type: 'POST',
-          url: '../mailer/smart.php',
+          url: 'mailer/smart.php',
           data: $(this).serialize(),
           success: function () {
             forms.each(function () {
