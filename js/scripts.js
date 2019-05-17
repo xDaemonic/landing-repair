@@ -1,3 +1,30 @@
+/* Навигация по файлу
+
+1. Переменные
+2. Настройки слайдера
+3. Функции для отложенной загрузки яндекс.карт
+4. Показываем попап по клику на кнопку в хедере
+5. Показываем попап по клику на кнопки карточек
+6. Скрываем попап по клику на крестик
+7. Маски для все инпутов с типом tel
+8. Валидатор для всех форм
+9. Загрузка карты при появлении в области видимости
+10.Отправка форм AJAX */
+
+
+
+
+
+/* 1.Переменные */
+
+let inputPhones = $('input[type=tel]');
+let forms = $('form');
+let cardsBtn = $('.price-box_button');
+
+
+
+/* 2.Настройки слайдера */
+
 $('.work-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
@@ -20,6 +47,8 @@ $('.work-slider').slick({
 
   ]
 });
+
+/* 3.Функции для отложенной загрузки яндекс.карт */
 
 //Переменная для включения/отключения индикатора загрузки
 var spinner = $('.map-container').children('.loader');
@@ -109,13 +138,140 @@ function loadScript(url, callback) {
   document.getElementsByTagName("head")[0].appendChild(script);
 }
 
+
+
 $(document).ready(function () {
-  let width = $(document).innerWidth();
-  let road = $('#map').offset()['top'];
+
+  /* 4.Показываем попап по клику на кнопку в хедере */
+
+  $('.header-cont_button').on('click', function () {
+    $('.popup-success').removeClass('removeTop');
+    $('.popup-request').removeClass('removeTop');
+    $('.overlay').css('display', 'block');
+    setTimeout(function () {
+      $('.overlay').toggleClass('overlay-active');
+    }, 300);
+    setTimeout(function () {
+      $('.popup-request').toggleClass('dropTop');
+    }, 500)
+  });
+
+
+
+  /*  5.Показываем попап по клику на кнопки карточек */
+
+  cardsBtn.on('click', function (event) {
+    event.preventDefault();
+    $('.popup-success').removeClass('removeTop');
+    $('.popup-request').removeClass('removeTop');
+    $('.overlay').css('display', 'block');
+    setTimeout(function () {
+      $('.overlay').toggleClass('overlay-active');
+    }, 300);
+    setTimeout(function () {
+      $('.popup-request').toggleClass('dropTop');
+    }, 500)
+  })
+
+
+
+  /* 6.Скрываем попап по клику на крестик */
+
+  $('.close').on('click', function () {
+    $('.popup-request').addClass('removeTop');
+    $('.popup-request').toggleClass('dropTop');
+    setTimeout(function () {
+      $('.overlay').toggleClass('overlay-active');
+    }, 300);
+    setTimeout(function () {
+      $('.overlay').css('display', 'none');
+    }, 500);
+  });
+
+  $('.success-button').on('click', function () {
+    $('.popup-success').addClass('removeTop');
+    $('.popup-success').toggleClass('dropTop');
+    setTimeout(function () {
+      $('.overlay').removeClass('overlay-active');
+    }, 300);
+    setTimeout(function () {
+      $('.overlay').css('display', 'none');
+    }, 500);
+  })
+
+  /* 7.Маски для все инпутов с типом tel */
+
+  inputPhones.each(function () {
+    $(this).mask('+7(999) 999-9999');
+  });
+
+
+
+  /* 8.Валидатор для всех форм */
+  forms.each(function () {
+    $(this).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 3
+        },
+        phone: {
+          required: true
+        }
+      },
+      messages: {
+        name: {
+          required: 'Это обязательное поле',
+          minlength: 'Не менее 3 символов'
+        },
+        phone: {
+          required: 'Это обязательное поле'
+        }
+      },
+      submitHandler: function (form, event) {
+        event.preventDefault();
+        $.ajax({
+          type: 'POST',
+          url: '../mailer/smart.php',
+          data: $(this).serialize(),
+          success: function () {
+            forms.each(function () {
+              $(this).trigger('reset');
+            });
+            if ($('.overlay').hasClass('overlay-active')) {
+              $('.popup-request').addClass('removeTop');
+              $('.popup-request').toggleClass('dropTop');
+              setTimeout(function () {
+                $('.popup-success').addClass('dropTop');
+              }, 300);
+            } else {
+              $('.popup-request').removeClass('removeTop');
+              $('.popup-success').removeClass('removeTop');
+              $('.overlay').css('display', 'block');
+              setTimeout(function () {
+                $('.overlay').addClass('overlay-active');
+              }, 300);
+              setTimeout(function () {
+                $('.popup-success').addClass('dropTop');
+              }, 500);
+            }
+
+          }
+        })
+      }
+    })
+  })
+
+
+
+  /* 9.Загрузка карты при появлении в области видимости */
+
   $(window).on('scroll', function () {
+    let road = $('#map').offset()['top'];
     let scroll = $(window).scrollTop();
     let winHeight = $(window).height();
     let come = scroll + winHeight;
+
     if (road < (come)) {
       if (!check_if_load) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
 
@@ -134,4 +290,33 @@ $(document).ready(function () {
       $(window).off('scroll');
     }
   })
-})
+});
+
+/* 10.Отправка форм AJAX */
+
+
+/*      $('.offer-form').on('submit', function (event) {
+       event.preventDefault();
+       $.ajax({
+         type: 'POST',
+         url: '../mailer/smart.php',
+         data: $(this).serialize(),
+         success: function () {
+           if ($('.overlay').hasClass('overlay-active')) {
+             $('.popup-request').addClass('removeTop');
+             $('.popup-request').toggleClass('dropTop');
+             setTimeout(function () {
+               $('.popup-success').addClass('dropTop');
+             }, 300);
+           } else {
+             $('.overlay').css('display', 'block');
+             setTimeout(function () {
+               $('.overlay').addClass('overlay-active');
+             }, 300);
+             setTimeout(function () {
+               $('.popup-success').addClass('dropTop');
+             }, 500);
+           }
+         }
+       })
+     }) */

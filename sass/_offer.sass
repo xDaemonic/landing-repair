@@ -40,17 +40,30 @@
     flex-wrap: wrap
     justify-content: space-between
     margin-bottom: 2.6rem
+    .input
+      flex-basis: 48%
+      position: relative
+      label
+        width: 100%
+        position: absolute
+        bottom: 5%
+        left: 50%
+        transform: translate(-50%, 0)
+        font-size: 1.6rem
+        text-align: center
     & :nth-child(1)
-      @media (min-width: 1200px)
-        margin-left: 1px
-        padding-left: 22px
+      input
+        @media (min-width: 1200px)
+          margin-left: 1px
+          padding-left: 22px
     & :nth-child(2)
-      @media (min-width: 1200px)
-        margin-right: 3px
-        padding-left: 29px
-        letter-spacing: -0.2px
+      input
+        @media (min-width: 1200px)
+          margin-right: 3px
+          padding-left: 29px
+          letter-spacing: -0.2px
   &-input
-    flex-basis: 48%
+    width: 100%
     border: 1px solid #dddddd
     border-radius: 10px
     font-size: 1.6rem

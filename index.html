@@ -116,8 +116,12 @@
               бесплатного дизайн-проекта!</div>
             <!-- /.offer-subtitle -->
             <form action="" class="offer-form">
-              <input type="text" class="offer-input" placeholder="Ваше имя" required>
-              <input type="tel" class="offer-input" placeholder="Ваш телефон" required>
+              <div class="input">
+                <input type="text" class="offer-input" placeholder="Ваше имя" name="name">
+              </div>
+              <div class="input">
+                <input type="tel" class="offer-input" placeholder="Ваш телефон" name="phone">
+              </div>
               <button class="button" type="submit"><span>Получить бесплатный
                   дизайн-</span><span>проект</span></button>
               <!-- /.offer-button -->
@@ -185,7 +189,7 @@
             <!-- /.price-box_logo -->
             <h6 class="price-box_title">Ремонт ванных комнат и с/у</h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -198,7 +202,7 @@
             <h6 class="price-box_title">Ремонт комнат и квартир
             </h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -211,7 +215,7 @@
             <h6 class="price-box_title">Отделка офисных помещений
             </h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -224,7 +228,7 @@
             <h6 class="price-box_title">Ремонт в новостройках
             </h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -236,7 +240,7 @@
             <!-- /.price-box_logo -->
             <h6 class="price-box_title">Ремонт кухонь</h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -249,7 +253,7 @@
             <h6 class="price-box_title">Ремонт дач и коттеджей
             </h6>
             <!-- /.price-box_title -->
-            <a href="" class="price-box_button">Узнать цены</a>
+            <a href="#" class="price-box_button">Узнать цены</a>
             <!-- /.price-button -->
           </div>
           <!-- /.price-box -->
@@ -472,8 +476,8 @@
             <div class="request-form_subtitle">Для этого заполните форму ниже</div>
             <!-- /.request-form_subtitle -->
             <form action="">
-              <input type="text" required placeholder="Ваше имя">
-              <input type="tel" required placeholder="Ваш телефон">
+              <input type="text" name="name" placeholder="Ваше имя">
+              <input type="tel" name="phone" placeholder="Ваш телефон">
               <button class="button" type="submit">Рассчитать стоимость</button>
               <!-- /.button -->
               <div class="form-descr">Мы перезвоним Вам в течение 60 секунд</div>
@@ -545,9 +549,44 @@
     <!-- /.footer-wrap -->
   </footer>
 
+  <div class="overlay">
+    <div class="popup popup-request">
+      <div class="popup-form">
+        <h4 class="popup-title">Заказать обратный звонок</h4>
+        <div class="close">&#10006;</div>
+        <form action="" class="">
+          <input type="text" name="name" placeholder="Ваше имя">
+          <input type="tel" name="phone" placeholder="Ваш телефон">
+          <button class="button">Заказать</button>
+          <!-- /.button -->
+        </form>
+        <!-- /.popup-form -->
+      </div>
+    </div>
+    <!-- /.popup -->
+
+    <div class="popup popup-success">
+      <div class="success">
+        <div class="success-title">Ваша заявка принята!</div>
+        <!-- /.success-title -->
+        <div class="success-text">Благодарим за проявленный интерес к нашей компании. Менеджер свяжется с вами в течении
+          60 минут и ответит на все Ваши вопросы.</div>
+        <!-- /.success-text -->
+        <button class="success-button button">Закрыть</button>
+        <!-- /.success-button button -->
+      </div>
+      <!-- /.success -->
+    </div>
+    <!-- /.popup -->
+  </div>
+
 
   <!-- JQuerry library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Validate JS -->
+  <script src="plugins/jquery.validate.min.js"></script>
+  <!-- Masked Input -->
+  <script src="plugins/jquery.maskedinput.min.js"></script>
   <!-- Slick-slider -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
