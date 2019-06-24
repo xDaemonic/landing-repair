@@ -265,36 +265,6 @@ $(document).ready(function () {
 
 /* 10.Отправка форм AJAX */
 
-/* $('.offer-form').on('submit', function (event) {
-  event.preventDefault();
-  $.ajax({
-    type: 'post',
-    url: '../mailer/smart.php',
-    data: $(this).serialize(),
-    success: function () {
-      if ($('.overlay').hasClass('overlay-active')) {
-        $('.popup-request').addClass('removeTop');
-        $('.popup-request').toggleClass('dropTop');
-        setTimeout(function () {
-          $('.popup-success').addClass('dropTop');
-        }, 300);
-      } else {
-        $('.overlay').css('display', 'block');
-        setTimeout(function () {
-          $('.overlay').addClass('overlay-active');
-        }, 300);
-        setTimeout(function () {
-          $('.popup-success').addClass('dropTop');
-        }, 500);
-      }
-    },
-    error: function () {
-      alert('Что-то пошло не так...');
-    }
-  })
-}); */
-
-
 forms.each(function () {
   this.addEventListener('submit', function (event) {
     event.preventDefault();
