@@ -33,16 +33,16 @@ $('.work-slider').slick({
   nextArrow: '<div class="right-arrow"></div>',
   responsive: [{
 
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 2
-      }
-    }, {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1
-      }
+    breakpoint: 1200,
+    settings: {
+      slidesToShow: 2
     }
+  }, {
+    breakpoint: 576,
+    settings: {
+      slidesToShow: 1
+    }
+  }
 
 
   ]
@@ -196,6 +196,7 @@ $(document).ready(function () {
     }, 300);
     setTimeout(function () {
       $('.overlay').css('display', 'none');
+      $('.popup-success').removeClass('removeTop');
     }, 500);
   })
 
@@ -229,37 +230,6 @@ $(document).ready(function () {
           required: 'Это обязательное поле'
         }
       },
-      submitHandler: function (form, event) {
-        event.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: 'mailer/smart.php',
-          data: $(this).serialize(),
-          success: function () {
-            forms.each(function () {
-              $(this).trigger('reset');
-            });
-            if ($('.overlay').hasClass('overlay-active')) {
-              $('.popup-request').addClass('removeTop');
-              $('.popup-request').toggleClass('dropTop');
-              setTimeout(function () {
-                $('.popup-success').addClass('dropTop');
-              }, 300);
-            } else {
-              $('.popup-request').removeClass('removeTop');
-              $('.popup-success').removeClass('removeTop');
-              $('.overlay').css('display', 'block');
-              setTimeout(function () {
-                $('.overlay').addClass('overlay-active');
-              }, 300);
-              setTimeout(function () {
-                $('.popup-success').addClass('dropTop');
-              }, 500);
-            }
-
-          }
-        })
-      }
     })
   })
 
@@ -295,29 +265,68 @@ $(document).ready(function () {
 
 /* 10.Отправка форм AJAX */
 
+/* $('.offer-form').on('submit', function (event) {
+  event.preventDefault();
+  $.ajax({
+    type: 'post',
+    url: '../mailer/smart.php',
+    data: $(this).serialize(),
+    success: function () {
+      if ($('.overlay').hasClass('overlay-active')) {
+        $('.popup-request').addClass('removeTop');
+        $('.popup-request').toggleClass('dropTop');
+        setTimeout(function () {
+          $('.popup-success').addClass('dropTop');
+        }, 300);
+      } else {
+        $('.overlay').css('display', 'block');
+        setTimeout(function () {
+          $('.overlay').addClass('overlay-active');
+        }, 300);
+        setTimeout(function () {
+          $('.popup-success').addClass('dropTop');
+        }, 500);
+      }
+    },
+    error: function () {
+      alert('Что-то пошло не так...');
+    }
+  })
+}); */
 
-/*      $('.offer-form').on('submit', function (event) {
-       event.preventDefault();
-       $.ajax({
-         type: 'POST',
-         url: '../mailer/smart.php',
-         data: $(this).serialize(),
-         success: function () {
-           if ($('.overlay').hasClass('overlay-active')) {
-             $('.popup-request').addClass('removeTop');
-             $('.popup-request').toggleClass('dropTop');
-             setTimeout(function () {
-               $('.popup-success').addClass('dropTop');
-             }, 300);
-           } else {
-             $('.overlay').css('display', 'block');
-             setTimeout(function () {
-               $('.overlay').addClass('overlay-active');
-             }, 300);
-             setTimeout(function () {
-               $('.popup-success').addClass('dropTop');
-             }, 500);
-           }
-         }
-       })
-     }) */
+
+forms.each(function () {
+  this.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var form = $(this);
+    $.ajax({
+      type: 'post',
+      url: '../mailer/smart.php',
+      data: $(this).serialize(),
+      success: function () {
+        if ($('.overlay').hasClass('overlay-active')) {
+          $('.popup-request').addClass('removeTop');
+          $('.popup-request').toggleClass('dropTop');
+          setTimeout(function () {
+            $('.popup-success').addClass('dropTop');
+          }, 300);
+        } else {
+          $('.overlay').css('display', 'block');
+          setTimeout(function () {
+            $('.overlay').addClass('overlay-active');
+          }, 300);
+          setTimeout(function () {
+            $('.popup-success').addClass('dropTop');
+          }, 500);
+        }
+        var inputs = form[0].getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[i].value = '';
+        }
+      },
+      error: function () {
+        alert('Что-то пошло не так...');
+      }
+    })
+  });
+})
